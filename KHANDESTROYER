@@ -22,15 +22,16 @@ const playAudio = url => {
 };
 
 // Função para exibir um toast (notificação)
-function sendToast(text, duration = 5000, gravity = 'bottom', imageUrl = null, fontSize = '16px', fontFamily = 'Arial, sans-serif', color = '#ff0000') {
+function sendToast(text, duration = 5000, gravity = 'bottom', imageUrl = null, fontSize = '16px', fontFamily = 'Arial, sans-serif', color = '#ffffff') {
     const toast = Toastify({
         text: text,
         duration: duration,
         gravity: gravity,
         position: "center",
         stopOnFocus: true,
+        className: "", // impede estilos padrão
         style: {
-            background: "#000000",
+            background: "#000000", // fundo preto
             fontSize: fontSize,
             fontFamily: fontFamily,
             color: color,
@@ -215,11 +216,20 @@ loadScript('https://cdn.jsdelivr.net/npm/darkreader@4.9.92/darkreader.min.js').t
     DarkReader.setFetchMethod(window.fetch);
     DarkReader.enable();
 
-    sendToast("SCRIPT ATIVO KHAN DESTRUIDO", 5000, 'top', null, '20px', 'Arial, sans-serif', '##ff0000');
+    sendToast("SCRIPT ATIVO KHAN DESTRUIDO", 5000, 'top', null, '20px', 'Arial, sans-serif', '#ffffff');
 });
 
 // Carrega o CSS do Toastify
-loadCss('https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css');
+loadCss('https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css').then(() => {
+    // Sombra vermelha
+    const styleFix = document.createElement('style');
+    styleFix.innerHTML = `
+        .toastify {
+            box-shadow: 0 4px 12px rgba(255, 0, 0, 0.4) !important;
+        }
+    `;
+    document.head.appendChild(styleFix);
+});
 
 // Carrega o Toastify e inicia as funcionalidades
 loadScript('https://cdn.jsdelivr.net/npm/toastify-js').then(async () => {
