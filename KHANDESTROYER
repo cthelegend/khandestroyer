@@ -30,7 +30,7 @@ function sendToast(text, duration = 5000, gravity = 'bottom', imageUrl = null, f
         position: "center",
         stopOnFocus: true,
         style: {
-            background: "#000000",
+            background: "#ff0000",
             fontSize: fontSize,
             fontFamily: fontFamily,
             color: color,
@@ -223,7 +223,7 @@ loadCss('https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css');
 
 // Carrega o Toastify e inicia as funcionalidades
 loadScript('https://cdn.jsdelivr.net/npm/toastify-js').then(async () => {
-    sendToast("🏢 KhanDestroyer injetado com sucesso!", 5000, 'bottom');
+    sendToast("KhanDestroyer injetado com sucesso!", 5000, 'bottom');
     window.features.autoAnswer = true;
     spoofQuestion();
     autoAnswer();
