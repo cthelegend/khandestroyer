@@ -194,7 +194,7 @@ async function showSplashScreen() {
         font-size: 30px;
         text-align: center;
     `;
-    splashScreen.innerHTML = '<span style="color:white;">Innovation </span><span style="color:#7D3C98;">Khan</span>';
+    splashScreen.innerHTML = '<span style="color:white;">KHAN </span><span style="color:#ff0000;">=DESTROYER</span>';
     document.body.appendChild(splashScreen);
     setTimeout(() => splashScreen.style.opacity = '1', 10);
 
@@ -215,7 +215,7 @@ loadScript('https://cdn.jsdelivr.net/npm/darkreader@4.9.92/darkreader.min.js').t
     DarkReader.setFetchMethod(window.fetch);
     DarkReader.enable();
 
-    sendToast("SCRIPT ATIVO KHAN DESTRUIDO", 5000, 'top', null, '20px', 'Arial, sans-serif', '#7D3C98');
+    sendToast("SCRIPT ATIVO KHAN DESTRUIDO", 5000, 'top', null, '20px', 'Arial, sans-serif', '##ff0000');
 });
 
 // Carrega o CSS do Toastify
