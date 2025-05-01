@@ -225,7 +225,7 @@ loadCss('https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css').then(()
     const styleFix = document.createElement('style');
     styleFix.innerHTML = `
         .toastify {
-            box-shadow: 0 4px 12px rgba(255, 0, 0, 0.4) !important;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.9) !important;
         }
     `;
     document.head.appendChild(styleFix);
