@@ -30,7 +30,7 @@ function sendToast(text, duration = 5000, gravity = 'bottom', imageUrl = null, f
         position: "center",
         stopOnFocus: true,
         style: {
-            background: "#ff0000",
+            background: "#000000",
             fontSize: fontSize,
             fontFamily: fontFamily,
             color: color,
