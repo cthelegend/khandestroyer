@@ -22,7 +22,7 @@ const playAudio = url => {
 };
 
 // Função para exibir um toast (notificação)
-function sendToast(text, duration = 5000, gravity = 'bottom', imageUrl = null, fontSize = '16px', fontFamily = 'Arial, sans-serif', color = '#ffffff') {
+function sendToast(text, duration = 5000, gravity = 'bottom', imageUrl = null, fontSize = '16px', fontFamily = 'Arial, sans-serif', color = '#ff0000') {
     const toast = Toastify({
         text: text,
         duration: duration,
