@@ -133,7 +133,7 @@ function spoofQuestion() {
                     };
 
                     responseObj.data.assessmentItem.item.itemData = JSON.stringify(itemData);
-                    sendToast("MADE BY 15KCRIS", 1000);
+                    sendToast("Questão Destruida por KhanDestroyer!", 1000);
 
                     return new Response(JSON.stringify(responseObj), {
                         status: originalResponse.status,
