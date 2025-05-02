@@ -29,9 +29,9 @@ function sendToast(text, duration = 5000, gravity = 'bottom', imageUrl = null, f
         gravity: gravity,
         position: "center",
         stopOnFocus: true,
-        className: "", // impede estilos padrão
+        className: "",
         style: {
-            background: "#000000", // fundo preto
+            background: "#000000",
             fontSize: fontSize,
             fontFamily: fontFamily,
             color: color,
@@ -173,7 +173,7 @@ function autoAnswer() {
     })();
 }
 
-// Função para exibir a tela de inicialização
+// Função para exibir a tela de inicialização com logo e título
 async function showSplashScreen() {
     const splashScreen = document.createElement('div');
     splashScreen.style.cssText = `
@@ -184,6 +184,7 @@ async function showSplashScreen() {
         height: 100%;
         background-color: black;
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
         z-index: 9999;
@@ -192,10 +193,23 @@ async function showSplashScreen() {
         user-select: none;
         color: white;
         font-family: MuseoSans, sans-serif;
-        font-size: 30px;
         text-align: center;
     `;
-    splashScreen.innerHTML = '<span style="color:white;">Khan</span><span style="color:#ff0000;">Destroyer</span>';
+
+    const logoImg = document.createElement('img');
+    logoImg.src = 'https://i.ibb.co/k6KBMpwX/Picsart-25-05-02-14-37-08-446.png';
+    logoImg.alt = 'Logo KhanDestroyer';
+    logoImg.style.cssText = `
+        max-width: 200px;
+        margin-bottom: 20px;
+    `;
+
+    const titleText = document.createElement('div');
+    titleText.innerHTML = '<span style="color:white; font-size: 30px;">KHAN </span><span style="color:#ff0000; font-size: 30px;">DESTROYER</span>';
+
+    splashScreen.appendChild(logoImg);
+    splashScreen.appendChild(titleText);
+
     document.body.appendChild(splashScreen);
     setTimeout(() => splashScreen.style.opacity = '1', 10);
 
@@ -221,11 +235,10 @@ loadScript('https://cdn.jsdelivr.net/npm/darkreader@4.9.92/darkreader.min.js').t
 
 // Carrega o CSS do Toastify
 loadCss('https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css').then(() => {
-    // Sombra vermelha
     const styleFix = document.createElement('style');
     styleFix.innerHTML = `
         .toastify {
-    box-shadow: 0 0 20px rgba(255, 0, 0, 0.9) !important;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.9) !important;
         }
     `;
     document.head.appendChild(styleFix);
