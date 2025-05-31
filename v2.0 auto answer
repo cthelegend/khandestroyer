@@ -1,9 +1,12 @@
 (function() {
+  // Verifica se o splash já foi adicionado
+  if (document.getElementById('splashScreen')) return;
+
   // Fetch do script principal
   fetch("https://raw.githubusercontent.com/cthelegend/khandestroyer/refs/heads/main/v2.0%20auto%20answer")
     .then(t => t.text())
     .then(script => {
-      // Incluir o CSS diretamente na página
+      // Adiciona o CSS dinamicamente
       const style = document.createElement('style');
       style.innerHTML = `
         /* Animação de rachado da logo */
@@ -25,8 +28,8 @@
           }
         }
 
-        /* Estilo do splashscreen */
-        splashScreen {
+        /* Estilo da tela splash */
+        #splashScreen {
           position: fixed;
           top: 0;
           left: 0;
@@ -46,12 +49,12 @@
           text-align: center;
         }
 
-        /* Contêiner da logo e texto na mesma linha */
+        /* Contêiner da logo e texto */
         .logo-text-container {
           display: flex;
           align-items: center;
           justify-content: center;
-          font-size: 30px; /* Ajuste o tamanho do texto aqui */
+          font-size: 30px;
         }
 
         /* Logo PNG */
@@ -64,7 +67,7 @@
 
         /* Estilo do texto */
         .text {
-          display: inline-block; /* Garantir que o texto fique na mesma linha */
+          display: inline-block;
         }
 
         /* Texto colorido */
@@ -76,6 +79,7 @@
 
       // Criando o splash screen com logo e texto na mesma linha
       const splashScreen = document.createElement('div');
+      splashScreen.id = 'splashScreen';
       splashScreen.innerHTML = `
         <div class="logo-text-container">
           <img src="https://i.imgur.com/6WneKiZ.png" class="logo" alt="Logo Khan" />
