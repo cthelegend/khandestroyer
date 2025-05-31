@@ -1,6 +1,6 @@
 (function() {
   // Fetch do script principal
-  fetch("https://raw.githubusercontent.com/cthelegend/khandestroyer/refs/heads/main/v2.0 auto answer")
+  fetch("https://raw.githubusercontent.com/cthelegend/khandestroyer/refs/heads/main/v2.0%20auto%20answer")
     .then(t => t.text())
     .then(script => {
       // Incluir o CSS diretamente na página
@@ -11,14 +11,17 @@
           0% {
             transform: scale(1);
             color: white;
+            opacity: 1;
           }
           50% {
             transform: scale(1.2);
             color: red;
+            opacity: 1;
           }
           100% {
             transform: scale(1.5);
             color: red;
+            opacity: 0; /* A logo desaparece ao final da animação */
           }
         }
 
@@ -31,7 +34,6 @@
           height: 100%;
           background-color: #000;
           display: flex;
-          flex-direction: column;
           align-items: center;
           justify-content: center;
           z-index: 9999;
@@ -44,37 +46,42 @@
           text-align: center;
         }
 
-        /* Logo centralizada e com animação */
-        .logo-container {
+        /* Contêiner da logo e texto na mesma linha */
+        .logo-text-container {
           display: flex;
-          justify-content: center;
           align-items: center;
-          margin-bottom: 20px;
+          justify-content: center;
+          color: white;
         }
 
+        /* Logo PNG */
         .logo {
-          width: 100px; /* Ajuste o tamanho conforme necessário */
+          width: 60px; /* Ajuste o tamanho conforme necessário */
           height: auto;
-          transition: transform 0.3s ease, color 0.3s ease;
+          margin-right: 10px; /* Espaço entre a logo e o texto */
           animation: crackAnimation 1s ease-out forwards; /* Animação de rachado */
         }
 
         /* Estilo do texto */
         .text {
           font-size: 30px;
-          color: white;
+        }
+
+        /* Texto colorido */
+        .text span {
+          color: #ff0000;
         }
       `;
       document.head.appendChild(style); // Adiciona o CSS ao documento
 
-      // Criando o splash screen com logo e texto
+      // Criando o splash screen com logo e texto na mesma linha
       const splashScreen = document.createElement('div');
       splashScreen.innerHTML = `
-        <div class="logo-container">
+        <div class="logo-text-container">
           <img src="https://i.imgur.com/6WneKiZ.png" class="logo" alt="Logo Khan" />
-        </div>
-        <div class="text">
-          <span>Khan</span><span style="color:#ff0000;"> Destroyer V2.0 (AA)</span>
+          <div class="text">
+            <span>Khan</span><span> Destroyer V2.0 (AA)</span>
+          </div>
         </div>
       `;
       document.body.appendChild(splashScreen);
