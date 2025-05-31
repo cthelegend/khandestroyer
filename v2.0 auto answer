@@ -20,7 +20,7 @@
           }
           100% {
             transform: scale(1.5);
-            opacity: 0; /* Logo desaparece ao final */
+            opacity: 0; /* A logo desaparece ao final */
             filter: hue-rotate(180deg); /* A cor final é vermelha */
           }
         }
@@ -51,19 +51,20 @@
           display: flex;
           align-items: center;
           justify-content: center;
+          font-size: 30px; /* Ajuste o tamanho do texto aqui */
         }
 
         /* Logo PNG */
         .logo {
           width: 100px; /* Ajuste o tamanho conforme necessário */
           height: auto;
-          margin-right: 10px; /* Espaço entre a logo e o texto */
+          margin-right: 20px; /* Espaço entre a logo e o texto */
           animation: crackAnimation 2s ease-out forwards; /* Animação de rachado */
         }
 
         /* Estilo do texto */
         .text {
-          font-size: 30px;
+          display: inline-block; /* Garantir que o texto fique na mesma linha */
         }
 
         /* Texto colorido */
