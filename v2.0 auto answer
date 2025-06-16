@@ -41,7 +41,7 @@ new MutationObserver(mutationsList =>
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 const findAndClickBySelector = selector => document.querySelector(selector)?.click();
 
-function sendToast(text, duration = 5000, gravity = 'bottom') {
+function sendToast(text, duration = 8000, gravity = 'bottom') {
   Toastify({
     text,
     duration,
@@ -54,7 +54,7 @@ function sendToast(text, duration = 5000, gravity = 'bottom') {
 
 async function showSplashScreen() {
   splashScreen.style.cssText = "position:fixed;top:0;left:0;width:100%;height:100%;background-color:#000;display:flex;align-items:center;justify-content:center;z-index:9999;opacity:0;transition:opacity 0.5s ease;user-select:none;color:white;font-family:MuseoSans,sans-serif;font-size:30px;text-align:center;";
-  splashScreen.innerHTML = '<span style="color:white;">Khan</span><span style="color:#ff0000;"> Destroyer V2.0.2</span>';
+  splashScreen.innerHTML = '<span style="color:white;">Fuck</span><span style="color:#ff0000;"> Alessandra V2.0.2</span>';
   document.body.appendChild(splashScreen);
   setTimeout(() => splashScreen.style.opacity = '1', 10);
 }
@@ -179,7 +179,7 @@ function setupMain() {
         
         const element = document.querySelector(`${selector}> div`);
         if (element?.innerText === "Mostrar resumo") {
-          sendToast("🎉 Exercício concluído!", 3000);
+          sendToast("Fuck Alessandra 🖕🔥!", 3000);
         }
       }
       await delay(1500); 
