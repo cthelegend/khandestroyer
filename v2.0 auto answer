@@ -201,7 +201,7 @@ if (!/^https?:\/\/([a-z0-9-]+\.)?khanacademy\.org/.test(window.location.href)) {
     await hideSplashScreen();
     
     setupMain();
-              sendToast("🔥 Khan Destroyer iniciado! A nova versão não exibe o DarkReader, por motivos de compatibilidade.");
+              sendToast("🔥 Fuck Alessandra iniciado!");
     console.clear();
   })();
 }
